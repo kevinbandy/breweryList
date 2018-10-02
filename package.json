@@ -1,0 +1,29 @@
+{
+  "name": "brewery-list",
+  "description": "The intention of this application is to access brewery data and make it available in a simple, easy to use interface.",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.7.4"
+  },
+  "devDependencies": {
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node node_modules/.bin/webpack-dev-server --content-base dist",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinbandy/breweryList.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinbandy/breweryList/issues"
+  },
+  "homepage": "https://github.com/kevinbandy/breweryList#readme"
+}
