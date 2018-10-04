@@ -1,3 +1,12 @@
 <!-- brewery-list.html -->
 
 <p>Breweries will be listed here {{ $ctrl.myVar() }}</p>
+
+<brewery-list-item
+	ng-repeat=" brewery in $ctrl.getBreweries() "
+	id=" brewery.id "
+	name=" brewery.name "
+	type=" brewery.brewery_type "
+	state=" brewery.state "
+	web-link=" brewery.website_url ">
+</brewery-list-item>
