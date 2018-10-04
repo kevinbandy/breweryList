@@ -4,10 +4,14 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "angular": "^1.7.4"
+    "angular": "^1.7.4",
+    "less": "^3.8.1"
   },
   "devDependencies": {
+    "css-loader": "^1.0.0",
     "html-loader": "^0.5.5",
+    "less-loader": "^4.1.0",
+    "style-loader": "^0.23.0",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.9"

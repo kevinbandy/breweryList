@@ -1,19 +1,29 @@
-<!-- brewery-list.html -->
+<header class="container">
+	<div class="row justify-content-center">
+		<h1 class="col-6 text-center">Brewery List</h1>
+	</div>
 
-<p>Breweries will be listed here {{ $ctrl.myVar() }}</p>
+	<div class="row row-search justify-content-center">
+		<search-input
+			class="col-6"
+			submit-event=" $ctrl.searchEvent ">
+		</search-input>
+	</div>
+</header>
 
-<search-input
-	submit-event=" $ctrl.searchEvent ">
-</search-input>
+<div class="container">
+	<div class="row">
+		<h4 ng-if=" $ctrl.breweries.length === 0 " class="text-center">No Results Found</h4>
 
-<h4 ng-if=" $ctrl.breweries.length === 0 ">No Results Found</h4>
-
-<brewery-list-item
-	ng-if=" $ctrl.breweries.length "
-	ng-repeat=" brewery in $ctrl.breweries "
-	id=" brewery.id "
-	name=" brewery.name "
-	type=" brewery.brewery_type "
-	state=" brewery.state "
-	web-link=" brewery.website_url ">
-</brewery-list-item>
+		<brewery-list-item
+			ng-if=" $ctrl.breweries.length "
+			ng-repeat=" brewery in $ctrl.breweries "
+			class="col-12 col-md-6 col-lg-4"
+			id=" brewery.id "
+			name=" brewery.name "
+			type=" brewery.brewery_type "
+			locale=" $ctrl.getLocale(brewery.city, brewery.state) "
+			web-link=" brewery.website_url ">
+		</brewery-list-item>
+	</div>
+</div>

@@ -4,7 +4,12 @@ export default {
 		id: '<',
 		name: '<',
 		type: '<',
-		state: '<',
+		locale: '<?',
 		webLink: '<'
-	}
+	},
+	controller: ['$scope', function breweryListItemController($scope) {
+		const ctrl = this;
+
+		ctrl.locale = $scope.state + ', some state';
+	}]
 };

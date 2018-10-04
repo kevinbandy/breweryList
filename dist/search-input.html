@@ -1,6 +1,9 @@
-<input
-	type="text"
-	name="search"
-	ng-model=" $ctrl.query " />
+<form ng-submit=" $ctrl.onButtonClick($ctrl.query) ">
+	<input
+		type="text"
+		name="search"
+		class="search-input"
+		ng-model=" $ctrl.query " />
 
-<button ng-click=" $ctrl.onButtonClick($ctrl.query) ">Search</button>
+	<button class="search-input-button">Search</button>
+</form>

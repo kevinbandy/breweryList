@@ -7,11 +7,22 @@ export default {
 
 		ctrl.breweries = [];
 		ctrl.searchEvent = BREWERY_LIST;
+		ctrl.getLocale = getLocale;
 
 		$rootScope.$on(BREWERY_LISTED, function processBreweryList(_, breweries) {
 			ctrl.breweries = breweries;
 		});
 
 		$scope.$emit(BREWERY_LIST);
+
+		function getLocale(city, state) {
+			if (city && state) {
+				return city + ', ' + state;
+			} else if (city && !state) {
+				return city;
+			} else if (!city && state) {
+				return state;
+			}
+		}
 	}]
 }
