@@ -3,23 +3,15 @@ import { BREWERY_LIST, BREWERY_LISTED } from './../brewery.enum.js';
 export default {
 	templateUrl: './brewery-list.html',
 	controller: ['$scope', '$rootScope', function breweryListController($scope, $rootScope) {
+		let ctrl = this;
 
-		let _breweries = [];
-
-		this.getBreweries = getBreweries;
+		ctrl.breweries = [];
+		ctrl.searchEvent = BREWERY_LIST;
 
 		$rootScope.$on(BREWERY_LISTED, function processBreweryList(_, breweries) {
-			setBreweries(breweries);
+			ctrl.breweries = breweries;
 		});
 
-		$rootScope.$broadcast(BREWERY_LIST);
-
-		function setBreweries(breweries) {
-			_breweries = breweries;
-		}
-
-		function getBreweries() {
-			return _breweries;
-		}
+		$scope.$emit(BREWERY_LIST);
 	}]
 }

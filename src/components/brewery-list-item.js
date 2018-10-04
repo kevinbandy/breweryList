@@ -6,8 +6,5 @@ export default {
 		type: '<',
 		state: '<',
 		webLink: '<'
-	},
-	controller: [function breweryListItemController() {
-		// do controller things
-	}]
+	}
 };

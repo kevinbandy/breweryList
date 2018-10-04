@@ -2,8 +2,15 @@
 
 <p>Breweries will be listed here {{ $ctrl.myVar() }}</p>
 
+<search-input
+	submit-event=" $ctrl.searchEvent ">
+</search-input>
+
+<h4 ng-if=" $ctrl.breweries.length === 0 ">No Results Found</h4>
+
 <brewery-list-item
-	ng-repeat=" brewery in $ctrl.getBreweries() "
+	ng-if=" $ctrl.breweries.length "
+	ng-repeat=" brewery in $ctrl.breweries "
 	id=" brewery.id "
 	name=" brewery.name "
 	type=" brewery.brewery_type "

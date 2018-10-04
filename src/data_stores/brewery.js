@@ -5,13 +5,19 @@ export default [
 	'$http',
 	function breweryDataStore($rootScope, $http) {
 
-		$rootScope.$on(BREWERY_LIST, function getBreweryList() {
+		$rootScope.$on(BREWERY_LIST, function getBreweryList(_, query) {
 
-			var searchTerm = 'dog';
+			let searchTerm = query || '';
+			const baseUrl = 'https://api.openbrewerydb.org/'
+			let queryUrl = baseUrl + 'breweries';
+
+			if (searchTerm.length) {
+				queryUrl += '/search?query=' + searchTerm;
+			}
 
 			$http({
 				method: 'GET',
-				url: 'https://api.openbrewerydb.org/breweries/search?query=' + searchTerm
+				url: queryUrl
 			}).then(function success(response) {
 				$rootScope.$broadcast(BREWERY_LISTED, response.data);
 			});
