@@ -1,4 +1,4 @@
-import { BREWERY_LIST, BREWERY_LISTED } from './../brewery.enums.js';
+import { BREWERY_LIST, BREWERY_LISTED } from './../brewery.enum.js';
 
 export default {
 	templateUrl: './brewery-list.html',
